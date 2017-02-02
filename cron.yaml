@@ -1,0 +1,24 @@
+cron:
+- description: expires old assigned review steps
+  url: /cron/expire_old_assigned_reviews
+  schedule: every 15 minutes  # Max execution is 10 minutes.
+- description: process pending notifications
+  url: /cron/process_pending_notifications
+  schedule: every 1 hours
+- description: indexes all courses
+  url: /cron/search/index_courses
+  schedule: every day 06:00
+- description: clean up resources from map/reduce jobs.
+  url: /cron/mapreduce/cleanup
+  schedule: every day 03:45
+- description: Run job to report count of courses and students to CourseBuilder.
+  url: /cron/usage_reporting/report_usage
+  schedule: every sunday 05:00
+- description: Runs batch jobs to delete items not indexable by user ID.
+  url: /cron/data_removal/batch_delete
+  # Compromise between keeping costs due to batch run down versus preventing
+  # user re-registration while deletion is not yet complete.
+  schedule: every day 03:30
+- description: Runs the organisation reporter
+  url: /cron/org_reporter
+  schedule: every day 12:00
