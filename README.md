@@ -57,6 +57,17 @@ The URL and class with the cron action in it is added to the routes in coursebui
 
 ##Modifications to the code at modules/courses/lessons.py
 
+###Additional imports:
+
+**Lines #48-51** - for use with the organisation reporter code
+
+```
+from oauth2client.appengine import AppAssertionCredentials
+from httplib2 import Http
+from apiclient import discovery
+from modules.certificate import certificate
+```
+
 ###Additional classes added:
 
 **Lines #595-724** - `class OrganisationReporterCronHandler(utils.AbstractAllCoursesCronHandler)`
