@@ -12,10 +12,15 @@ Also, the google sheets that would need to the data pushed to it would require t
 We also start adding data at row number 3 in the sheet. This can be changed in the code, but it does leave a couple of rows at the top of the sheet for headers and information about what the data in the column represents.
 
 Another prerequisite is for you to manually create an Entity in the datastore called OrganisationReporter (the kind) for your courses namespace, with the following fields:
+
 -For the key identifier, select custom name, and then enter the name for this record
+
 -end_row_number - which is an Integer, set it to 0, and make sure it is not indexed
+
 -organisation - which is a String, set it to the organisations key or id, and tick indexed
+
 -sheet_name - which is a String, set this to the worksheet name in the google sheet which the data needs to be entered into, untick indexed
+
 -spreadsheet_id - which is a String, set this to google sheet id (for example in the URL for this google sheet https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit, you would need to enter 1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms part in this field) where the data needs to pushed to, tick indexed
 
 ##Modifications to cron.yaml 
